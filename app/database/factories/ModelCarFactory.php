@@ -18,6 +18,7 @@ class ModelCarFactory extends Factory
     {
         return [
             'name' => fake()->word,
+            'average_price' => fake()->randomFloat(2, 100000, 999999),
         ];
     }
 }

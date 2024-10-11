@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('models', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->foreignUuid('brand_id')->references('id')->on('brands')->onDelete('cascade')->onUpdate('cascade');
             $table->string('name');
             $table->float('average_price');
             $table->timestamps();

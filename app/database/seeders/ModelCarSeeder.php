@@ -21,13 +21,13 @@ class ModelCarSeeder extends Seeder
         $brands = Brand::all();
 
         foreach ($models as $item) {
-            $model = ModelCar::create([
+            $brand = $brands->where('name', '=', $item['brand_name'])->first();
+
+            ModelCar::create([
                 'name' => $item['name'],
                 'average_price' => $item['average_price'],
+                'brand_id' => $brand->id,
             ]);
-
-            $brand = $brands->where('name', '=', $item['brand_name'])->first();
-            $model->brand()->attach($brand->id);
         }
     }
 }
