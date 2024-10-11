@@ -1,0 +1,2 @@
+make linter-fix
+make test-pre-commit
