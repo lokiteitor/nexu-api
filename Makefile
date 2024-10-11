@@ -5,7 +5,7 @@ NEXU_API=nexu-api
 linter-fix:
 	cd ./app && $(PINT)
 
-run-clear:
+run-clear-cache:
 	${DOCKER_COMPOSE} exec -T ${NEXU_API} php artisan optimize:clear
 
 test-pre-commit: run-clear-cache
